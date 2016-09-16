@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+     <script>
+	 function AppInfo() {
+    alert('Build By Namespace Ahr');              
+       }
+	 
+	 </script>
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+	<script src="cal.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+
+
+     <ion-content scroll="false" class="fill-height">
+    <div class="row row-center">
+    
+  <input type="text" class="col display" id="caltext" value="0." readonly/>
+
+    </div>
+    <div class="row row-center">
+        <div class="col">
+            
+          <button id="7" onclick="addcaltext(this);" class="button button-outline button-positive">7</button>
+        </div>
+        <div class="col">
+            <button id="8" onclick="addcaltext(this);" class="button button-outline button-positive">8</button>
+        </div>
+        <div class="col">
+            <button id="9" onclick="addcaltext(this);" class="button button-outline button-positive">9</button>
+        </div>
+		
+		
+        <div class="col">
+            <button  onclick="multi(this);" class="button button-outline button-positive">
+               * 
+            </button>
+        </div>
+    </div>
+    <div class="row row-center">
+        <div class="col">
+            <button id="4" onclick="addcaltext(this);" class="button button-outline button-positive">4</button>
+        </div>
+        <div class="col">
+            <button id="5" onclick="addcaltext(this);" class="button button-outline button-positive">5</button>
+        </div>
+        <div class="col">
+            <button id="6" onclick="addcaltext(this);" class="button button-outline button-positive">6</button>
+        </div>
+        <div class="col">
+            <button onclick="div(this);" class="button button-outline button-positive">
+               / 
+            </button>
+        </div>
+    </div>
+    <div class="row row-center">
+        <div class="col">
+            <button id="1" onclick="addcaltext(this);" class="button button-outline button-positive">1</button>
+        </div>
+        <div class="col">
+            <button id="2" onclick="addcaltext(this);" class="button button-outline button-positive">2</button>
+        </div>
+        <div class="col">
+            <button id="3" onclick="addcaltext(this);" class="button button-outline button-positive">3</button>
+        </div>
+        <div class="col">
+            <button onclick="add(this);" class="button button-outline button-positive">
+               + 
+            </button>
+        </div>
+    </div>
+    <div class="row row-center">
+        <div class="col">
+            <button id="AC" onclick="aC(this);" class="button button-outline button-assertive">
+               CLR 
+            </button>
+        </div>
+        <div class="col">
+            <button id="0" onclick="addcaltext(this);" class="button button-outline button-positive">0</button>
+        </div>
+        <div class="col">
+            <button onclick="equal(this);" class="button button-outline button-positive">
+                =
+            </button>
+        </div>
+        <div class="col">
+            <button onclick="sub(this);" class="button button-outline button-positive">
+               - 
+            </button>
+        </div>
+    </div>
+</ion-content>
+	  
+	  <div class="bar bar-footer">
+  <button class="button button-assertive"  onclick="AppInfo();">Developer</button>
+  <div class="title">Pre Build Release</div>
+  <button class="button button-clear">Right</button>
+</div>
+    </ion-pane>
+  </body>
+</html>

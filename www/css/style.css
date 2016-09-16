@@ -1,0 +1,8 @@
+/* Empty. Add your own CSS if you like */
+ion-content .col {
+    text-align: center;
+}
+ion-content input.display {
+    font-size: 2em;
+    text-align: right;
+}
