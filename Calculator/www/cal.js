@@ -10,18 +10,21 @@ var multi1=0;
 var multi2=0;
 var div1=0;
 var div2=0;
+var Sq1=0;
+var SqrAll=0;
+
 
 
 function mPlus(btn)
 {
-m+=parseInt(document.getElementById('caltext').value);
+m+=parseFloat(document.getElementById('caltext').value);
 
 
 }
 
 function mMinus(btn)
 {
-m-=parseInt(document.getElementById('caltext').value);
+m-=parseFloat(document.getElementById('caltext').value);
 
 
 }
@@ -37,7 +40,7 @@ document.getElementById('caltext').value=m;
 
 function sqrt(btn)
 {
-var sqrt=Math.sqrt(parseInt(document.getElementById('caltext').value));
+var sqrt=Math.sqrt(parseFloat(document.getElementById('caltext').value));
 document.getElementById('caltext').value=sqrt;
 mem=document.getElementById('caltext').value;
 
@@ -54,7 +57,7 @@ function equal(btn)
 if(op=="div")
 {
 
-var div2=parseInt(curr);
+var div2=parseFloat(curr);
 
 var div=div1/div2;
 
@@ -68,7 +71,7 @@ mem=div;
 if(op=="multi")
 {
 
-var multi2=parseInt(curr);
+var multi2=parseFloat(curr);
 
 var multi=multi1*multi2;
 
@@ -83,7 +86,7 @@ mem=multi;
 if(op=="sub")
 {
 
-var sub2=parseInt(curr);
+var sub2=parseFloat(curr);
 
 var sub=sub1-sub2;
 
@@ -98,7 +101,7 @@ mem=sub;
 if(op=="sum")
 {
 
-var add2=parseInt(curr);
+var add2=parseFloat(curr);
 
 var sum=add1+add2;
 
@@ -109,37 +112,68 @@ add2=0;
 curr=document.getElementById('caltext').value;
 mem=sum;
 }
+
+if(op=="sqr")
+{
+
+var Sqrp=parseFloat(curr);
+
+var sqrres=Math.pow(SqrAll, Sqrp);;
+
+
+document.getElementById('caltext').value=sqrres;
+SqrAll=0;
+Sqrp=0;
+curr=document.getElementById('caltext').value;
+mem=sqrres;
+}
 }
 function add(btn)
 {
-add1=parseInt(curr);
+add1=parseFloat(curr);
 curr="";
 op="sum";
+}
+function SQR(btn)
+{
+SqrAll=parseFloat(curr);
+curr="";
+op="sqr";
+}
+function sQ(btn)
+{
+Sq1=parseFloat(curr);
+curr=(Sq1*Sq1);
+document.getElementById('caltext').value=curr;
 }
 
 function sub(btn)
 {
-sub1=parseInt(curr);
+sub1=parseFloat(curr);
 curr="";
 op="sub";
 }
 function multi(btn)
 {
-multi1=parseInt(curr);
+multi1=parseFloat(curr);
 curr="";
 op="multi";
 }
 
 function div(btn)
 {
-div1=parseInt(curr);
+div1=parseFloat(curr);
 curr="";
 op="div";
 }
 function addcaltext(btn)
 {
 var ch=btn.innerHTML;
-if(curr=="")
+if(ch=="." && document.getElementById('caltext').value=="0.")
+{
+ document.getElementById('caltext').value="0.";
+}
+else if(curr=="")
 {
 document.getElementById('caltext').value="";
 curr=document.getElementById('caltext').value=ch;
